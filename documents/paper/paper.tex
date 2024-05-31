@@ -6,6 +6,9 @@
 \usepackage{hyperref}
 \usepackage{csquotes}
 \usepackage[a4paper]{geometry}
+\usepackage{graphicx} %Um externe Bilddateien einfügen zu können.
+\usepackage{float}
+\usepackage{caption}
 
 \usepackage[
     backend=biber,
@@ -31,7 +34,36 @@
 
 \begin{document}
 
-\maketitle
+% Hier wird die Titelseite gestaltet.
+\begin{titlepage}
+    \makeatletter % Das hier brauchen wir damit wir spezielle Befehle wie \@author verwenden können.
+	\begin{center}
+		{\scshape Gymnasium Muttenz} \vspace{0.5cm}
+
+		 Informatik 2023/2024\vspace{5.5cm}
+
+		{\huge\bfseries \@title}
+
+        \vspace{1cm}
+
+        \begin{figure}[h]
+            \centering 
+            \includegraphics[width=0.5\textwidth]{KI.jpg} 
+            %\caption{Ein erstes Bild}
+            %\label{fig:meme}
+            \end{figure}
+
+		\vspace{2cm}
+
+		{\Large\itshape \@author}
+
+        \vspace{2cm}
+
+        Version vom: \@date
+	\end{center}
+    
+    \makeatother % Wir müssen das @ wieder schliessen, damit der Rest ganz normal funktioniert.
+\end{titlepage}
 
 \abstract{
     In diesem Projekt verstehe ich die Ethik im Umgang mit Daten.
@@ -74,30 +106,45 @@ Oder denken Sie an selbstfahrende Autos, die vor schwierigen Entscheidungen steh
 
 \section{Haftungsverpflichtung}
 Die Haftung für Schäden, die durch KI-Entscheidungen verursacht werden, ist unklar und hängt von vielen Faktoren ab, wie z.B. die beteiligten Parteien, bestehenden Verträgen, nationaler und internationaler Gesetzgebung, zu dem noch die technischen Eigenschaften der KI-Systeme. In der Technik wird es häufig eine Kombination von Verantwortlichkeiten des Entwicklers, des Betreibers und vielleicht des Benutzers geben, abhängig von den konkreten Umständen des Falls und den geltenden rechtlichen Rahmenbedingungen.
-Verantwortlichkeit der Entwickler und Hersteller
-•	Produkthaftung: Entwickler und Hersteller von KI könnten haftbar gemacht werden, wenn ein Defekt in der Software oder Hardware bezeugt wird. Dies könnte unter die Produkthaftungsgesetze fallen, die für inkorrekte Produkte gelten.
-•	Sorgfaltspflicht: Wenn nachgeprüft werden kann, dass die Entwickler oder Hersteller ihrer Pflicht nicht berücksichtigt haben, z.B. aufgrund mangelhafter Tests oder unzureichende Schutzmassnahmen, könnten sie haftbar gemacht werden.
-Verantwortlichkeit der Betreiber und Nutzer 
-•	Haftung der Nutzer: Unternehmen oder Einzelpersonen, die KI-Systeme betreiben, könnten haftbar sein, wenn sie diese Systeme unprofessionell nutzen oder wenn sie keine Schutzmechanismen, angemessene Überwachung und Kontrolle einsetzen. 
-•	Vertragliche Haftung: Wenn zwischen dem Nutzer und dem Entwickler ein Vertrag besteht, können die Fragen der Verantwortlichkeit auch durch die bestimmten Bestimmungen des Vertrags geregelt werden.
 
-Gemeinsame Verantwortung
-•	Haftungsteilung: In einigen Fällen könnte es zu einer gemeinsamen Verantwortung führen, bei der sowohl Entwickler als auch Inhaber zu unterschiedlichen Verhältnissen haftbar gemacht werden. Dies kann besonders bei komplizierten Systemen so sein, bei denen verschiedene Parteien an der Entstehung und dem Betrieb beteiligt sind.
-Künstliche Intelligenz und autonome Systeme
-•	Haftung für autonome Entschlüsse: Bei autonomen Systemen, die Entscheidungen ohne menschliches Eingreifen treffen, ist die Frage, wer dafür verantwortlich ist, besonders schwierig. Hier diskutieren die Juristen und Gesetzgeber, eine einfache Lösung, um diese Herausforderung zu umgehen. Die folgenden Ideen, die sie bereits haben lauten z.B. die Einführung eines neuen rechtlichen Status für autonome Systeme oder spezielle Versicherungslösungen.
+\subsection{Verantwortlichkeit der Entwickler und Hersteller}
 
-\chapter{Quellen}
+\begin{itemize}
+    \item Produkthaftung: Entwickler und Hersteller von KI könnten haftbar gemacht werden, wenn ein Defekt in der Software oder Hardware bezeugt wird. Dies könnte unter die Produkthaftungsgesetze fallen, die für inkorrekte Produkte gelten.
+    \item Sorgfaltspflicht: Wenn nachgeprüft werden kann, dass die Entwickler oder Hersteller ihrer Pflicht nicht berücksichtigt haben, z.B. aufgrund mangelhafter Tests oder unzureichende Schutzmassnahmen, könnten sie haftbar gemacht werden.
+\end{itemize}
+		
+\subsection{Verantwortlichkeit der Betreiber und Nutzer}
 
-\url {https://www.clickworker.de/kunden-blog/kuenstliche-intelligenz-systeme-trainieren/}
- \url{https://www.t-online.de/digital/internet/id_100310396/wie-funktioniert-ki-kuenstliche-intelligenz-einfach-erklaert.html}
- \url {https://www.srd-rechtsanwaelte.de/blog/kuenstliche-intelligenz-haftung/}
- \url {https://legal.pwc.de/de/news/fachbeitraege/haftung-fuer-schaeden-durch-kuenstliche-intelligenz-der-richtlinienvorschlag-der-eu-kommission}
-\url {https://www.europarl.europa.eu/topics/de/article/20200827STO85804/was-ist-kunstliche-intelligenz-und-wie-wird-sie-genutzt#:~:text=K%C3%BCnstliche%20Intelligenz%20ist%20die%20F%C3%A4higkeit%20einer%20Maschine%2C%20menschliche,zu%20l%C3%B6sen%2C%20um%20ein%20bestimmtes%20Ziel%20zu%20erreichen.}
+\begin{itemize}
+\item Haftung der Nutzer: Unternehmen oder Einzelpersonen, die KI-Systeme betreiben, könnten haftbar sein, wenn sie diese Systeme unprofessionell nutzen oder wenn sie keine Schutzmechanismen, angemessene Überwachung und Kontrolle einsetzen. 
+\item Vertragliche Haftung: Wenn zwischen dem Nutzer und dem Entwickler ein Vertrag besteht, können die Fragen der Verantwortlichkeit auch durch die bestimmten Bestimmungen des Vertrags geregelt werden.
+\end{itemize}
+
+\subsection{Gemeinsame Verantwortung}
+\begin {itemize}
+\item Haftungsteilung: In einigen Fällen könnte es zu einer gemeinsamen Verantwortung führen, bei der sowohl Entwickler als auch Inhaber zu unterschiedlichen Verhältnissen haftbar gemacht werden. Dies kann besonders bei komplizierten Systemen so sein, bei denen verschiedene Parteien an der Entstehung und dem Betrieb beteiligt sind.
+\end{itemize}
+
+\subsection{Künstliche Intelligenz und autonome Systeme} 
+\begin{itemize}
+    \item Haftung für autonome Entschlüsse: Bei autonomen Systemen, die Entscheidungen ohne menschliches Eingreifen treffen, ist die Frage, wer dafür verantwortlich ist, besonders schwierig. Hier diskutieren die Juristen und Gesetzgeber, eine einfache Lösung, um diese Herausforderung zu umgehen. Die folgenden Ideen, die sie bereits haben lauten z.B. die Einführung eines neuen rechtlichen Status für autonome Systeme oder spezielle Versicherungslösungen.
+\end{itemize}
+
+
+\chapter{Fazit}
+
+Die Durchführung von KI bringt auf der einen Seite wichtige Vorteile mit sich, stellt jedoch auf der anderen Seite vielfältige Haftungsfragen dar. Oft gibt es keine deutlichen Verantwortlichkeiten, die sich auf Entwickler, Hersteller, Betreiber und Nutzer beziehen. Es besteht die Option, dass Entwickler aufgrund von Produkthaftung und Sorgfaltspflicht haftbar sind, während Betreiber und Nutzer bei amateurhafter Nutzung zur Rechenschaft gezogen werden können. Die Haftung autonomer Systeme, die ohne menschliche Einmischung handeln, ist besonders anspruchsvoll. Um die Entscheidungsbefugnis festzulegen und die sichere Anwendung von KI zu erfüllen, sind spezifische gesetzliche Rahmenbedingungen und eventuelle Lösungen wie neue rechtliche Entwicklungsstände oder spezielle Versicherungen nötig.
+
+
+\nocite{*}
+\printbibliography
+\end{document}
 
 \input{chap_methode.tex} 
 
 
 
-\printbibliography
 
-\end{document}
+
+
